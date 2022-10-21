@@ -12,13 +12,13 @@ jobs:
     name: Test Dbmate action
     services:
       postgres:
-        image: postgres:latest # `POSTGRES_HOST` is `postgres` (based on service label name) in Docker or `localhost` outside of Docker
+        image: postgres:latest
         env:
           POSTGRES_PASSWORD: postgres_password
         ports:
-          - 5432:5432 # maps tcp port 5432 on service container to the host
+          - 5432:5432
     env:
-      DATABASE_URL: postgres://postgres:postgres_password@localhost:5432/postgres # used for all steps
+      DATABASE_URL: postgres://postgres:postgres_password@postgres:5432/postgres # used for all steps
     steps:
       - name: Checkout
         uses: actions/checkout@v3

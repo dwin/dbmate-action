@@ -31,7 +31,7 @@ steps:
     with:
       command: 'up'
     env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      DATABASE_URL: postgres://postgres:changeme@postgres:5432/postgres # or ${{ secrets.DATABASE_URL }}
       DBMATE_MIGRATIONS_DIR: "./migrations"
       DBMATE_NO_DUMP_SCHEMA: "true"
       DBMATE_WAIT: "true"
