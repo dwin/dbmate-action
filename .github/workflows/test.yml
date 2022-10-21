@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Dbmate status
+      - name: Dbmate Apply Migrations
         uses: ./ # Uses an action in the root directory
         with:
           command: 'up'
@@ -31,7 +31,7 @@ jobs:
           DBMATE_SCHEMA_FILE: "./test_db_schema.sql"
           DBMATE_WAIT: "true"
           DBMATE_WAIT_TIMEOUT: "30s"
-      - name: "Add & Commit latest schema"
+      - name: Add & Commit latest schema
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions

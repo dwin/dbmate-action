@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS test_table (
   name VARCHAR(255) NOT NULL
 );
 
-INSERT INTO TABLE test_table (name) VALUES ('test');
+INSERT INTO test_table (name) VALUES ('test');
 
 -- migrate:down
 
