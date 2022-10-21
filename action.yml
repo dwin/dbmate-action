@@ -11,6 +11,6 @@ inputs:
     default: '--help'
 runs:
   using: 'docker'
-  image: 'ghcr.io/amacneil/dbmate:1.15'
+  image: 'docker://ghcr.io/amacneil/dbmate:1.15'
   args:
     - ${{ inputs.command }}
