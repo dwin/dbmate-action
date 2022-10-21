@@ -18,7 +18,7 @@ jobs:
         ports:
           - 5432:5432
     env:
-      DATABASE_URL: postgres://postgres:postgres_password@postgres:5432/postgres # used for all steps
+      DATABASE_URL: postgres://postgres:postgres_password@postgres:5432/postgres?sslmode=disable # used for all steps
     steps:
       - name: Checkout
         uses: actions/checkout@v3
