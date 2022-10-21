@@ -3,7 +3,7 @@
 This repository contains a GitHub Action for running [Dbmate](https://github.com/amacneil/dbmate), used
 for database migrations.
 
-It is based on the [Official Docker Hub Image](https://hub.docker.com/r/amacneil/dbmate),
+It is based on the [official Github Docker image](https://github.com/amacneil/dbmate/pkgs/container/dbmate),
 which is based on Alpine Linux.
 
 ## Inputs
