@@ -1,0 +1,37 @@
+name: Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test Dbmate action
+    services:
+      postgres:
+        image: postgres:latest # `POSTGRES_HOST` is `postgres` (based on service label name) in Docker or `localhost` outside of Docker
+        env:
+          POSTGRES_PASSWORD: postgres_password
+        ports:
+          - 5432:5432 # maps tcp port 5432 on service container to the host
+    env:
+      DATABASE_URL: postgres://postgres:postgres_password@localhost:5432/postgres # used for all steps
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Dbmate status
+        uses: ./ # Uses an action in the root directory
+        with:
+          command: 'up'
+        env: # Optional environment variables
+          DBMATE_MIGRATIONS_DIR: "./migrations"
+          DBMATE_SCHEMA_FILE: "./test_db_schema.sql"
+          DBMATE_WAIT: "true"
+          DBMATE_WAIT_TIMEOUT: "30s"
+      - name: "Add & Commit latest schema"
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
