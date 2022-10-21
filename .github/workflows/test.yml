@@ -28,7 +28,7 @@ jobs:
           command: 'up'
         env: # Optional environment variables
           DBMATE_MIGRATIONS_DIR: "./migrations"
-          DBMATE_SCHEMA_FILE: "./test_db_schema.sql"
+          DBMATE_SCHEMA_FILE: "./db/test_db_schema.sql"
           DBMATE_WAIT: "true"
           DBMATE_WAIT_TIMEOUT: "30s"
       - name: Add & Commit latest schema
