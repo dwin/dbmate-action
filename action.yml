@@ -1,7 +1,7 @@
 # action.yml
 name: 'Dbmate action'
 branding:
-  icon: 'tool'
+  icon: 'archive'
   color: 'gray-dark'
 description: 'Run Dbmate database migration tool'
 inputs:
