@@ -46,7 +46,7 @@ steps:
 ...
 steps:
   - name: "Run migrations"
-    uses: dwin/dbmate-action@v1.15
+    uses: dwin/dbmate-action@v2024.09.17
     with:
       command: 'up'
     env:
