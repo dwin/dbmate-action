@@ -9,8 +9,12 @@ inputs:
     description: 'Dbmate command to run'
     required: false
     default: '--help'
+  dbmate_version:
+    description: 'Dbmate version to use'
+    required: false
+    default: 'latest'
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/amacneil/dbmate:latest'
+  image: 'docker://ghcr.io/amacneil/dbmate:${{ inputs.dbmate_version }}'
   args:
     - ${{ inputs.command }}
