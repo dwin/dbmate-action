@@ -6,11 +6,15 @@ branding:
 description: 'Run Dbmate database migration tool'
 inputs:
   command:
-    description: 'Dbmate command to run'
+    description: 'Dbmate command to run (optional, defaults to "--help"). Example: up'
     required: false
     default: '--help'
+  dbmate_version:
+    description: 'Dbmate version to use (optional, defaults to latest). Example: 2.21'
+    required: false
+    default: 'latest'
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/amacneil/dbmate:1.15'
+  image: docker://ghcr.io/amacneil/dbmate:${{ inputs.dbmate_version }}
   args:
     - ${{ inputs.command }}

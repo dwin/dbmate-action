@@ -27,9 +27,10 @@ Uses the default command `up` and does not check in the database schema.
 ...
 steps:
   - name: "Run migrations"
-    uses: dwin/dbmate-action@v1.15
+    uses: dwin/dbmate-action@v2024.09.17
     with:
       command: 'up'
+      dbmate_version: '2.21' # optional, defaults to latest
     env:
       DATABASE_URL: postgres://postgres:changeme@postgres:5432/postgres # or ${{ secrets.DATABASE_URL }}
       DBMATE_MIGRATIONS_DIR: "./migrations"
@@ -45,7 +46,7 @@ steps:
 ...
 steps:
   - name: "Run migrations"
-    uses: dwin/dbmate-action@v1.15
+    uses: dwin/dbmate-action@v2024.09.17
     with:
       command: 'up'
     env:
