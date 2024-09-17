@@ -27,7 +27,7 @@ Uses the default command `up` and does not check in the database schema.
 ...
 steps:
   - name: "Run migrations"
-    uses: dwin/dbmate-action@v1.15
+    uses: dwin/dbmate-action ## to use the latest version of dbmate or specify a version use @<version> such as dwin/dbmate-action@v2
     with:
       command: 'up'
     env:
